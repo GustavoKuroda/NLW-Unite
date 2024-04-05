@@ -1,4 +1,4 @@
-# Operations with entities
+# Operations with entities of Events
 
 from typing import Dict
 from src.models.settings.connection import db_connection_handler
