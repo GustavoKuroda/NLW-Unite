@@ -12,6 +12,9 @@ def test_insert_attendee():
 
     This function tests the insertion of an attendee into the database by creating a sample attendee information
     and then calling the insert_attendee method of the AttendeesRepository class to insert the attendee.
+
+    Returns:
+        str: The response from the insert_attendee method.
     """
 
     event_id = "meu-uuid-e-nois"
@@ -30,6 +33,9 @@ def test_get_attendee_badge_by_id():
     """    Test the retrieval of an attendee's badge by ID.
 
     This function tests the functionality of retrieving an attendee's badge by their unique ID from the attendees repository.
+
+    Returns:
+        str: The attendee's badge retrieved by ID.
     """
 
     attendee_id = "meu_uuid_ateendee"
