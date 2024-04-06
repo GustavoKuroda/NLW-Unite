@@ -14,4 +14,10 @@ class Attendees(Base):
     created_at = Column(DateTime, default=func.now())
 
     def __repr__(self):
+        """        Return a string representation of the Attendees object.
+
+        Returns:
+            str: A string representation of the Attendees object containing name, email, and event_id.
+        """
+
         return f"Attendees [name={self.name}, email={self.email}, event_id={self.event_id}]"
