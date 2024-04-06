@@ -9,6 +9,21 @@ from sqlalchemy.orm.exc import NoResultFound
 
 class AttendeesRepository:
     def insert_attendee(self, attendee_info: Dict) -> Dict:
+        """        Insert attendee information into the database.
+
+        This function inserts the attendee information into the database and returns the attendee information if successful.
+
+        Args:
+            attendee_info (Dict): A dictionary containing the attendee information with keys "uuid", "name", "email", and "event_id".
+
+        Returns:
+            Dict: The attendee information that was inserted into the database.
+
+        Raises:
+            IntegrityError: If there is a conflict with the integrity of the database (e.g., duplicate entry).
+            Exception: If an unexpected error occurs during the insertion process.
+        """
+
         with db_connection_handler as database:
             try:
                 attendee = (
@@ -32,6 +47,21 @@ class AttendeesRepository:
                 raise exception
             
     def get_attendee_badge_by_id(self, attendee_id: str):
+        """        Get attendee badge information by attendee ID.
+
+        This function retrieves the attendee's name, email, and event title based on the provided attendee ID.
+
+        Args:
+            attendee_id (str): The unique identifier of the attendee.
+
+        Returns:
+            tuple: A tuple containing the attendee's name, email, and event title.
+                Returns None if no matching attendee is found.
+
+        Raises:
+            NoResultFound: If no matching attendee is found in the database.
+        """
+
         with db_connection_handler as database:
             try:
                 attendee = (
