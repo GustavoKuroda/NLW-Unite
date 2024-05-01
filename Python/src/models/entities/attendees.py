@@ -1,5 +1,3 @@
-# Describe the table "attendees"
-
 from src.models.settings.base import Base
 from sqlalchemy import Column, String, DateTime, ForeignKey
 from sqlalchemy.sql import func

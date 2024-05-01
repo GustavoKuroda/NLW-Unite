@@ -1,5 +1,3 @@
-# Integration tests for "events_repository.py"
-
 import pytest
 from .events_repository import EventsRepository
 from src.models.settings.connection import db_connection_handler

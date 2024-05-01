@@ -1,5 +1,3 @@
-# Integration tests for "attendees_repository.py"
-
 import pytest
 from .attendees_repository import AttendeesRepository
 from src.models.settings.connection import db_connection_handler
