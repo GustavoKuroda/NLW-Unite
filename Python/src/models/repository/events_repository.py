@@ -74,6 +74,18 @@ class EventsRepository:
                 return None
             
     def count_event_attendees(self, event_id: str) -> Dict:
+        """        Count the number of attendees for a specific event.
+
+        This function queries the database to count the number of attendees for a specific event.
+        It returns a dictionary containing the maximum number of attendees for the event and the actual number of attendees.
+
+        Args:
+            event_id (str): The unique identifier of the event.
+
+        Returns:
+            Dict: A dictionary containing the maximum number of attendees and the actual number of attendees.
+        """
+
         with db_connection_handler as database:
 
             event_count = (
