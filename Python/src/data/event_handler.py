@@ -32,6 +32,18 @@ class EventHandler:
         )
     
     def find_by_id(self, http_request: HttpRequest) -> HttpResponse:
+        """        Find an event by its ID and return its details along with the count of attendees.
+
+        Args:
+            http_request (HttpRequest): The HTTP request object containing the event ID in the parameters.
+
+        Returns:
+            HttpResponse: The HTTP response object containing the event details and attendee count.
+
+        Raises:
+            Exception: If the event is not found.
+        """
+
         event_id = http_request.param["event_id"]
         event = self.__events_repository.get_eventy_by_id(event_id)
         if not event: raise Exception("Evento nao encontrado")

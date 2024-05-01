@@ -22,6 +22,17 @@ def create_event():
 
 @event_route_bp.route("/events/<event_id>", methods=["GET"])
 def get_event(event_id):
+    """    Get event details by event ID.
+
+    This function retrieves event details using the provided event ID by making an HTTP request to the event handler.
+
+    Args:
+        event_id (int): The unique identifier of the event.
+
+    Returns:
+        tuple: A tuple containing the JSON response body and the HTTP status code.
+    """
+
     event_handler = EventHandler()
     http_request = HttpRequest(param={"event_id": event_id})
     http_response = event_handler.find_by_id(http_request)
