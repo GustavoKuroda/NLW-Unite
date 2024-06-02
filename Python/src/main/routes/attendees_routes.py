@@ -21,7 +21,7 @@ def get_attendees_badge(attendee_id):
     return jsonify(http_response.body), http_response.status_code
 
 @attendees_route_bp.route("/events/<event_id>/attendees", methods=["GET"])
-def get_attendees_(event_id):
+def get_attendees(event_id):
     attendees_handle = AttendeesHandler()
     http_request = HttpRequest(param={"event_id": event_id})
     http_response = attendees_handle.find_attendees_from_event(http_request)
